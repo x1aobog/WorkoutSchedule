@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .workout-list {
+            margin-top: 20px;
+        }
+        .workout-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️ Workout Schedule</h1>
+        <p>Welcome to your workout scheduling application!</p>
+        
+        <div class="workout-list" id="workouts">
+            <h3>Today's Workouts:</h3>
+            <div class="workout-item">
+                <strong>Morning Run</strong> - 07:00 AM
+            </div>
+            <div class="workout-item">
+                <strong>Gym Session</strong> - 06:00 PM
+            </div>
+        </div>
+        
+        <script>
+            // Fetch workouts from API
+            fetch('/api/workouts')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('API Response:', data);
+                })
+                .catch(error => console.error('Error:', error));
+        </script>
+    </div>
+</body>
+</html>
